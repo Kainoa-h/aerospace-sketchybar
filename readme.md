@@ -2,6 +2,8 @@
 ![alt text](bar_img.png)
 I couldn't find any resources for a simple sketchybar config that worked with aerospace. So this is what I came up with!
 
+[Here's my how current configuration looks](https://github.com/Kainoa-h/MacSetup)
+
 ## Credits:
 I'm kinda new to shell scripting and all this stuff.
 Here are the resources that helped me make this config besides the official [sketchybar](https://felixkratz.github.io/SketchyBar/config/bar) and [aerospace](https://nikitabobko.github.io/AeroSpace/guide) docs :p
