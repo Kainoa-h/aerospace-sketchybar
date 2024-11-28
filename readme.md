@@ -1,5 +1,5 @@
 # A simple sketchybar config for aerospace users!
-![alt text](bar.png)
+![alt text](bar_img.png)
 I couldn't find any resources for a simple sketchybar config that worked with aerospace. So this is what I came up with!
 
 ## Credits:
