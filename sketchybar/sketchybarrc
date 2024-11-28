@@ -48,7 +48,11 @@ for sid in $(aerospace list-workspaces --monitor 1); do
     background.corner_radius=5 \
     background.height=20 \
     background.drawing=on \
+    background.border_color=0xAAFFFFFF \
+    background.border_width=0 \
+    background.height=25 \
     icon="$sid" \
+    icon.padding_left=10 \
     label.font="sketchybar-app-font:Regular:16.0" \
     label.padding_right=20 \
     label.padding_left=0 \
@@ -98,7 +102,7 @@ sketchybar --add item front_app left \
 # https://felixkratz.github.io/SketchyBar/config/items#adding-items-to-sketchybar
 
 # Some items refresh on a fixed cycle, e.g. the clock runs its script once
-# every 10s. Other items respond to events they subscribe to, e.g. the
+# every 10s. Other gititems respond to events they subscribe to, e.g. the
 # volume.sh script is only executed once an actual change in system audio
 # volume is registered. More info about the event system can be found here:
 # https://felixkratz.github.io/SketchyBar/config/events
