@@ -44,15 +44,16 @@ for sid in $(aerospace list-workspaces --monitor 1); do
     --subscribe space.$sid aerospace_workspace_change \
     --set space.$sid \
     drawing=off \
-    background.color=0x44ffffff \#0xAAFF00FF \
+    background.color=0x44ffffff \
     background.corner_radius=5 \
-    background.height=20 \
     background.drawing=on \
     background.border_color=0xAAFFFFFF \
     background.border_width=0 \
     background.height=25 \
     icon="$sid" \
     icon.padding_left=10 \
+    icon.shadow.distance=4 \
+    icon.shadow.color=0xA0000000 \
     label.font="sketchybar-app-font:Regular:16.0" \
     label.padding_right=20 \
     label.padding_left=0 \
@@ -80,7 +81,6 @@ for sid in $(aerospace list-workspaces --monitor 1 --empty no); do
   fi
   sketchybar --set space.$sid label="$icon_strip"
 done
-
 
 sketchybar --add item space_separator left \
   --set space_separator icon="💩" \
