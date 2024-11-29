@@ -14,7 +14,7 @@ Here are the resources that helped me make this config besides the official [ske
 ## Aerospace:
 ### Getting it working:
 
-If you already have a aerospace config or don't want to use mine, add the following into your `aerospace.toml` to trigger sketchybar & pass workspace data.
+If you already have an aerospace config or don't want to use mine, add the following into your `aerospace.toml` to trigger sketchybar & pass workspace data.
 ``` Shell
 exec-on-workspace-change = ['/bin/bash', '-c',
     'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE'
