@@ -30,7 +30,7 @@ _do note that `'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPAC
  - Displays total swap memory (updates every 20 seconds)
 
 ### Getting it working:
-You will need to install a Nerd Fontif you haven't already!
+You will need to install a Nerd Font if you haven't already!
 ``` Shell
 brew tap homebrew/cask-fonts
 brew install font-hack-nerd-font
