@@ -23,12 +23,12 @@ exec-on-workspace-change = ['/bin/bash', '-c',
     'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE'
 ]
 ```
-_do note that `'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE'` should be on a single line._
+
 
 
 You should also add `--focus-follows-window` to the workspace change binds.
 This forces the workspace to follow when a window is moved to another workspace. This will cause 'exec-on-workspace-change' to fire, keeping the bar updated.
-Without, this when windows are moved to a new space, they won't appear in the bar until the bar is focused.
+Without this, when windows are moved to a new space, they won't appear in the bar until the bar is focused.
 From the [Aerospace guide](https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace):
 
 > "Make sure that the window in question receives focus after moving. This flag is a shortcut for manually running aerospace-workspace/aerospace-focus after move-node-to-monitor successful execution."
