@@ -2,6 +2,9 @@
 ![alt text](bar_img.png)
 I couldn't find any resources for a simple sketchybar config that worked with aerospace. So this is what I came up with!
 
+The styling is really ugly, i'm sorry. Hopefully that encourages you to tinker with the setup :p
+
+anyways if you're looking for something more fleshed out:
 [Here's my how current configuration looks](https://github.com/Kainoa-h/MacSetup)
 
 ## Credits:
@@ -22,6 +25,21 @@ exec-on-workspace-change = ['/bin/bash', '-c',
 ```
 _do note that `'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE'` should be on a single line._
 
+
+You should also add `--focus-follows-window` to the workspace change binds.
+This forces the workspace to follow when a window is moved to another workspace. This will cause 'exec-on-workspace-change' to fire, keeping the bar updated.
+Without, this when windows are moved to a new space, they won't appear in the bar until the bar is focused.
+From the [Aerospace guide](https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace):
+
+> "Make sure that the window in question receives focus after moving. This flag is a shortcut for manually running aerospace-workspace/aerospace-focus after move-node-to-monitor successful execution."
+
+``` toml
+alt-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
+alt-shift-2 = 'move-node-to-workspace 2 --focus-follows-window'
+alt-shift-3 = 'move-node-to-workspace 3 --focus-follows-window'
+alt-shift-4 = 'move-node-to-workspace 4 --focus-follows-window'
+...
+```
 
 ## Sketchybar
 ### Current Functionality:

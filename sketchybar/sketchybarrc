@@ -88,7 +88,7 @@ sketchybar --add item space_separator left \
   label.drawing=off \
   background.drawing=off \
   script="$PLUGIN_DIR/space_windows.sh" \
-  --subscribe space_separator aerospace_workspace_change
+  --subscribe space_separator aerospace_workspace_change front_app_switched space_windows_change
 
 # Front app!!
 sketchybar --add item front_app left \
