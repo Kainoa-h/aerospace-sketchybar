@@ -694,7 +694,7 @@ function icon_map() {
   "Zed")
     icon_result=":zed:"
     ;;
-  "Zen Browser")
+  "Zen Browser" | "Zen")
     icon_result=":zen_browser:"
     ;;
   "Zeplin")
