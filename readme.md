@@ -1,3 +1,14 @@
+> [!WARNING]
+> There is currently a bug in aerospace from v0.18.0 to v0.19.1 (and possibly later versions)   
+> If you are having these issues:
+> - Multiple workspace icons being highlighted at once
+> - Workspaces swtiching back and forth when switching workspaces
+>
+> Revert back to the latest working aerospace release   
+> `brew install --cask nikitabobko/tap/aerospace@0.17.1`
+> 
+> If you're on the latest aerospace version and theres no issues, den alls g ig
+
 # A simple sketchybar config for aerospace users!
 ![alt text](bar_img.png)
 I couldn't find any resources for a simple sketchybar config that worked with aerospace. So this is what I came up with!
