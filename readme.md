@@ -52,11 +52,33 @@ alt-shift-4 = 'move-node-to-workspace 4 --focus-follows-window'
 ...
 ```
 
+If you need multi-monitor support, extend the key binded to 'move-workspace-to-monitor' to also trigger a sketchybar event
+
+```toml
+alt-shift-tab = [
+  'move-workspace-to-monitor --wrap-around next',
+  'exec-and-forget sketchybar --trigger aerospace_monitor_change TARGET_MONITOR=$(aerospace list-monitors --focused --format "%{monitor-appkit-nsscreen-screens-id}") FOCUSED_WORKSPACE=$(aerospace list-workspaces --focused)',
+]
+```
+
+You may also want to adjust your window margins if your other monitors are not of the same resolution
+
+```toml
+[gaps]
+inner.horizontal = 10
+inner.vertical = 10
+outer.left = 20
+outer.bottom = 20
+outer.top = [{ monitor."BenQ EX2510" = 44 }, 14] # 14
+outer.right = 20
+```
+
 ## Sketchybar
 ### Current Functionality:
- - Dynamically displays/hides active/inactive workspaces. (not working perfectly...)
+ - Dynamically displays/hides active/inactive workspaces. (kinda jank)
  - Displays apps in each workspace
  - Displays total swap memory (updates every 20 seconds)
+ - Supports multi-monitors, only showing workspace icons on the monitor the workspace is in
 
 ### Getting it working:
 You will need to install a Nerd Font if you haven't already!

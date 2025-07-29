@@ -33,16 +33,18 @@ default=(
 sketchybar --default "${default[@]}"
 
 ##### Adding aeropsace layouts #####
-
-# Add the aerospace_workspace_change event we specified in aerospace.toml
+# Add the aerospace events we specified in aerospace.toml
 sketchybar --add event aerospace_workspace_change
+sketchybar --add event aerospace_monitor_change
 
-# This only works for single monitor configs!
-for sid in $(aerospace list-workspaces --monitor 1); do
-  #for sid in "${SPACE_IDS[@]}"; do
+for sid in $(aerospace list-workspaces --all); do
   sketchybar --add item space.$sid left \
     --subscribe space.$sid aerospace_workspace_change \
     --set space.$sid \
+    display="$(
+      v=$(aerospace list-windows --workspace "$sid" --format "%{monitor-appkit-nsscreen-screens-id}" | cut -c1)
+      echo "${v:-1}"
+    )" \
     drawing=off \
     background.color=0x44ffffff \
     background.corner_radius=5 \
@@ -66,7 +68,8 @@ for sid in $(aerospace list-workspaces --monitor 1); do
 done
 
 # Load Icons on startup
-for sid in $(aerospace list-workspaces --monitor 1 --empty no); do
+for mid in $(aerospace list-monitors | cut -c1); do
+  for sid in $(aerospace list-workspaces --monitor $mid --empty no); do
   apps=$(aerospace list-windows --workspace "$sid" | awk -F'|' '{gsub(/^ *| *$/, "", $2); print $2}')
 
   sketchybar --set space.$sid drawing=on
@@ -80,6 +83,7 @@ for sid in $(aerospace list-workspaces --monitor 1 --empty no); do
     icon_strip=""
   fi
   sketchybar --set space.$sid label="$icon_strip"
+  done
 done
 
 sketchybar --add item space_separator left \
@@ -88,7 +92,7 @@ sketchybar --add item space_separator left \
   label.drawing=off \
   background.drawing=off \
   script="$PLUGIN_DIR/space_windows.sh" \
-  --subscribe space_separator aerospace_workspace_change front_app_switched space_windows_change
+  --subscribe space_separator aerospace_workspace_change front_app_switched space_windows_change aerospace_monitor_change
 
 # Front app!!
 sketchybar --add item front_app left \
