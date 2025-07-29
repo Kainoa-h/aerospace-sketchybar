@@ -69,7 +69,7 @@ inner.horizontal = 10
 inner.vertical = 10
 outer.left = 20
 outer.bottom = 20
-outer.top = [{ monitor."BenQ EX2510" = 44 }, 14] # 14
+outer.top = [{ monitor."BenQ EX2510" = 44 }, 14]
 outer.right = 20
 ```
 
