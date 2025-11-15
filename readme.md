@@ -16,7 +16,7 @@ I couldn't find any resources for a simple sketchybar config that worked with ae
 The styling is really ugly, i'm sorry. Hopefully that encourages you to tinker with the setup :p
 
 anyways if you're looking for something more fleshed out:
-[Here's my how current configuration looks](https://github.com/Kainoa-h/MacSetup)
+[Here's my how current configuration looks](https://github.com/Kainoa-h/MacSetup#readme)
 
 ## Credits:
 I'm kinda new to shell scripting and all this stuff.
